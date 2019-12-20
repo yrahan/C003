@@ -5,3 +5,11 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
+        
+        numsdx = {}
+        for idx, i in enumerate(nums):          
+            n = target - i
+            if n not in numsdx:                
+                numsdx[i]=idx
+            else:
+                return [idx, numsdx[n]]
